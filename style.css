@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 400px;
+    margin: auto;
+}
+
+.intro-elements, .summary-items {
+    margin: 20px;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+
+}
+input {
+    margin: 10px;
+}
+
+#add-button {
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(27, 27, 126);
+    background-color: rgb(122, 215, 215);
+    font-size: larger;
+    font-weight: 800;
+    border: none;
+}
+
+#add-button:hover{
+    color: rgb(27, 27, 126);
+    background-color: rgb(108, 236, 125);
+}
+
+
+.transactions {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #9898d9;
+    text-align: left;
+}
+
