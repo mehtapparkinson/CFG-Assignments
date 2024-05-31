@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Budget App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div class="intro-container">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="intro-container">
         <h1>Budget Buddy</h1>
-        <p>Welcome to our budgeting app! Track your expenses and income to manage your finances effectively.</p>
-    </div>
-    <div class="inputs-container">
-        <input type="text" name="description" id="description" placeholder="description">
-        <input type="number" name="amount" id="amount" placeholder="amount">
+        <p>
+          Welcome to our budgeting app! Track your expenses and income to manage
+          your finances effectively.
+        </p>
+      </div>
+      <div class="inputs-container">
+        <input
+          type="text"
+          name="description"
+          id="description"
+          placeholder="description"
+        />
+        <input type="number" name="amount" id="amount" placeholder="amount" />
         <button id="add-button">Add</button>
-    </div>
-    <div class="summary">
+      </div>
+      <div class="summary">
         <h2>Your Budget:</h2>
         <p>Total Income:</p>
         <p>Total Expenses</p>
+      </div>
+      <div class="transactions"></div>
     </div>
-    <div class="transactions">
-
-    </div>
-    
-
 
     <script src="./app.js"></script>
-</body>
+  </body>
 </html>
