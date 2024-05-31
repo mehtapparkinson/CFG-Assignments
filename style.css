@@ -24,7 +24,7 @@ body{
     flex-direction: column;
 
 }
-input {
+input, select {
     margin: 10px;
 }
 
