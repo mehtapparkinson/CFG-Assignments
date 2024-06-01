@@ -8,36 +8,44 @@
   </head>
   <body>
     <div class="container">
+      <h1>Budget Buddy</h1>
       <div class="intro-container">
-        <h1 class="intro-elements">Budget Buddy</h1>
         <p class="intro-elements">
           Welcome to our budgeting app! Track your expenses and income to manage
           your finances effectively.
         </p>
+        <label for="name">What is your name?</label>
+        <input type="text" id="user-name" />
+        <button id="start-button" onclick="startBudget()">Start</button>
       </div>
-      <div class="inputs-container">
-        <input
-          type="text"
-          name="description"
-          id="description"
-          placeholder="description"
-        />
-        <input type="number" name="amount" id="amount" placeholder="amount" />
-        <select id="type">
+      <div class="app-container" style="display: none">
+        <div class="welcome-message"></div>
+        <div class="inputs-container">
+          <input
+            type="text"
+            name="description"
+            id="description"
+            placeholder="description"
+          />
+          <input type="number" name="amount" id="amount" placeholder="amount" />
+          <select id="type">
             <option value="expense">Expense</option>
             <option value="income">Income</option>
-        </select>
+          </select>
 
-      
-        <button id="add-button">Add</button>
-        <p id="message"></p>
-      </div>
-      <div class="summary">
-        <h2 class="summary-items">Your Budget</h2>
-        <p class="summary-items total-income">Total Income:</p>
-        <p class="summary-items total-expenses">Total Expenses:</p>
-      </div>
-      <div class="transactions">
+          <div class="buttons">
+            <button id="add-button">Add</button>
+            <button id="undo-button" style="display: none">Undo</button>
+          </div>
+
+          <p id="message"></p>
+        </div>
+        <div class="summary">
+          <h2 class="summary-items">Your Budget</h2>
+          <p class="summary-items total-income">Total Income:</p>
+          <p class="summary-items total-expenses">Total Expenses:</p>
+        </div>
+        <div class="transactions"></div>
       </div>
     </div>
 

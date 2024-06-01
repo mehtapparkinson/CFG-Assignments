@@ -1,3 +1,6 @@
+const startButton = document.getElementById("start-button");
+const introContainer = document.querySelector(".intro-container");
+const welcomeMessageArea = document.querySelector(".welcome-message");
 const inputsContainer = document.querySelector(".inputs-container");
 const inputDescription = document.getElementById("description");
 const inputAmount = document.getElementById("amount");
@@ -7,6 +10,29 @@ const message = document.getElementById("message");
 const totalIncome = document.querySelector(".total-income");
 const totalExpenses = document.querySelector(".total-expenses");
 const transactionsContainer = document.querySelector(".transactions");
+const undoButton = document.getElementById("undo-button");
+const appContainer = document.querySelector(".app-container");
+const userNameInput = document.getElementById("user-name");
+
+function startBudget() {
+  const userName = userNameInput.value.trim();
+  if (userName) {
+    appContainer.style.display = "block";
+    introContainer.style.display = "none";
+    const welcomeMessage = document.createElement("p");
+    const formattedName = userName[0].toUpperCase() + userName.slice(1);
+    console.log(`user ${formattedName} started budgeting app`);
+    welcomeMessage.textContent = `Hi ${formattedName.trim()}, welcome to your budgeting app!`;
+    welcomeMessageArea.appendChild(welcomeMessage);
+  } else {
+    alert("Please enter your name to start budgeting.");
+    const message = document.createElement("p");
+    message.textContent = "Please enter your name";
+    message.style.color = "red";
+    message.style.fontWeight = "800";
+    introContainer.appendChild(message);
+  }
+}
 
 let transactionsArray = [];
 
@@ -26,9 +52,11 @@ function addTransaction() {
     console.log(transactionsArray);
     showTransactions();
     calculateBudget();
+    undoButton.style.display = "block";
   } else {
     message.textContent = "";
     const failedMessage = "Please fill all fields!";
+    alert("Please fill all fields!");
     message.textContent = failedMessage;
     message.style.color = "red";
     message.style.fontWeight = "800";
@@ -55,13 +83,20 @@ function calculateBudget() {
     const element = transactionsArray[index];
     if (element.type === "income") {
       totalIncomeValue = totalIncomeValue + element.amount;
-    } else if (element.type === 'expense') {
+    } else if (element.type === "expense") {
       totalExpenseValue = totalExpenseValue + element.amount;
     }
   }
   totalIncome.textContent = `Total Income: €${totalIncomeValue}`;
   totalExpenses.textContent = `Total Expenses: €${totalExpenseValue}`;
-  
-
 }
 
+undoButton.addEventListener("click", undoTransaction);
+function undoTransaction() {
+  if (transactionsArray.length > 0) {
+    transactionsArray.pop();
+    showTransactions();
+    calculateBudget();
+  }
+  undoButton.style.display = transactionsArray.length > 0 ? "block" : "none";
+}

@@ -10,8 +10,8 @@ body{
     justify-content: center;
     text-align: center;
     align-items: center;
-    height: 100vh;
-    max-width: 400px;
+    min-height: 100vh;
+    max-width: 500px;
     margin: auto;
 }
 
@@ -22,13 +22,19 @@ body{
 .inputs-container {
     display: flex;
     flex-direction: column;
-
+    
 }
+
 input, select {
     margin: 10px;
 }
 
-#add-button {
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+#add-button, #undo-button, #start-button {
     padding: 10px;
     border-radius: 10px;
     color: rgb(27, 27, 126);
@@ -36,6 +42,7 @@ input, select {
     font-size: larger;
     font-weight: 800;
     border: none;
+    margin: 10px;
 }
 
 #add-button:hover{
