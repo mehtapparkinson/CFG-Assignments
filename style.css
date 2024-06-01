@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
@@ -10,9 +10,10 @@ h1 {
     font-weight: bolder;
 
 }
- p{
+
+p {
     font-weight: 700;
- }
+}
 
 .container {
     display: flex;
@@ -23,11 +24,12 @@ h1 {
     min-height: 100vh;
     max-width: 500px;
     margin: auto;
-    
+
 }
 
-.app-container, .intro-container {
-   
+.app-container,
+.intro-container {
+
     padding: 40px;
     border-radius: 10px;
     background-color: #ffffffba;
@@ -35,27 +37,31 @@ h1 {
 
 }
 
-.intro-elements, .summary-items {
+.intro-elements,
+.summary-items {
     margin: 20px;
 }
 
 .inputs-container {
     display: flex;
     flex-direction: column;
-    
+
 }
 
-input, select {
+input,
+select {
     margin: 10px;
-    min-height: 25px ;
+    min-height: 25px;
 }
 
-.buttons{
+.buttons {
     display: flex;
     flex-direction: row;
 }
 
-#add-button, #undo-button, #start-button {
+#add-button,
+#undo-button,
+#start-button {
     padding: 10px;
     border-radius: 10px;
     color: rgb(27, 27, 126);
@@ -66,7 +72,7 @@ input, select {
     margin: 10px;
 }
 
-#add-button:hover{
+#add-button:hover {
     color: rgb(27, 27, 126);
     background-color: rgb(108, 236, 125);
 }
@@ -85,4 +91,3 @@ input, select {
     justify-content: center;
     align-items: center;
 }
-
