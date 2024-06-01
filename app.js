@@ -16,6 +16,8 @@ const undoButton = document.getElementById("undo-button");
 const appContainer = document.querySelector(".app-container");
 const userNameInput = document.getElementById("user-name");
 const totalBudgetArea = document.querySelector(".total-budget");
+const homeworkPartTwoButton = document.getElementById("partTwoButton");
+const homeworkPartTwo = document.querySelector(".homework-part-two");
 
 function startBudget() {
   const userNameandSurnameArray = userNameInput.value.split(" "); //Split used here
@@ -39,14 +41,16 @@ function startBudget() {
   }
 }
 
-let transactionsArray = [];         //array created here
+let transactionsArray = []; //array created here
 
-addButton.addEventListener("click", addTransaction);      //event listeners added
-function addTransaction() {                             //created functions
-  const description = inputDescription.value.trim();    //inputs listened here
+addButton.addEventListener("click", addTransaction); //event listeners added
+function addTransaction() {
+  //created functions
+  const description = inputDescription.value.trim(); //inputs listened here
   const amount = parseInt(inputAmount.value.trim());
   const type = inputType.value;
-  if (description && amount && type) {  //if boolean used here
+  if (description && amount && type) {
+    //if boolean used here
     message.textContent = "";
     const transaction = {
       description,
@@ -75,7 +79,7 @@ function showTransactions() {
   transactionsContainer.textContent = "";
   transactionsArray.forEach((element) => {
     //for each used here
-    const transactionElement = document.createElement("p");  //changed HTML with JS
+    const transactionElement = document.createElement("p"); //changed HTML with JS
     transactionElement.classList.add("transaction");
     transactionElement.textContent = `${element.description}  -------------- ${element.amount}`;
     transactionElement.style.color =
@@ -151,5 +155,22 @@ function addToBeginning() {
     message.textContent = failedMessage;
     message.style.color = "red";
     message.style.fontWeight = "800";
+  }
+}
+
+homeworkPartTwoButton.addEventListener("click", nextPage);
+function nextPage() {
+  if (homeworkPartTwoButton.textContent === "Click here for Homework Part II") {
+    introContainer.style.display = "none";
+    appContainer.style.display = "none";
+    homeworkPartTwo.style.display = "block";
+    document.querySelector("h1").textContent = "Homework Part II";
+    homeworkPartTwoButton.textContent = "Go back to Part I";
+  } else if (homeworkPartTwoButton.textContent === "Go back to Part I") {
+    introContainer.style.display = "block";
+    appContainer.style.display = "none";
+    homeworkPartTwo.style.display = "none";
+    document.querySelector("h1").textContent = "💸 Budget Buddy";
+    homeworkPartTwoButton.textContent = "Click here for Homework Part II";
   }
 }

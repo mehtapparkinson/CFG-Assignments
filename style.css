@@ -27,6 +27,24 @@ p {
 
 }
 
+#partTwoButton {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(13, 54, 13);
+    background-color: rgb(148, 215, 100);
+    font-size: 15px;
+    font-weight: 800;
+    border: none;
+    margin: 10px;
+}
+
+#partTwoButton:hover {
+    background-color: rgb(155, 221, 199);
+}
+
 .app-container,
 .intro-container {
 
@@ -104,4 +122,16 @@ input:focus {
     font-weight: 800;
     justify-content: center;
     align-items: center;
+}
+
+.homework-part-two {
+    display: flex;
+    text-align: left;
+    width: 150%;
+}
+
+code {
+    font-size: larger;
+    color: rgb(93, 93, 93);
+    line-height: 1.7;
 }
