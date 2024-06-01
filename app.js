@@ -25,22 +25,43 @@ function addTransaction() {
     transactionsArray.push(transaction);
     console.log(transactionsArray);
     showTransactions();
+    calculateBudget();
   } else {
     message.textContent = "";
     const failedMessage = "Please fill all fields!";
     message.textContent = failedMessage;
-    message.style.color = 'red';
-    message.style.fontWeight = '800';
+    message.style.color = "red";
+    message.style.fontWeight = "800";
   }
 }
 
-function showTransactions () {
-  transactionsContainer.textContent = '';
-  transactionsArray.forEach(element => {
-    const transactionElement = document.createElement('p');
-    transactionElement.classList.add('transaction');
-    transactionElement.textContent = `${element.description}  -------------- ${element.amount}`
-     transactionElement.style.color = element.type === 'income' ? 'green' : 'red';
+function showTransactions() {
+  transactionsContainer.textContent = "";
+  transactionsArray.forEach((element) => {
+    const transactionElement = document.createElement("p");
+    transactionElement.classList.add("transaction");
+    transactionElement.textContent = `${element.description}  -------------- ${element.amount}`;
+    transactionElement.style.color =
+      element.type === "income" ? "green" : "red";
     transactionsContainer.appendChild(transactionElement);
   });
 }
+
+function calculateBudget() {
+  let totalIncomeValue = 0;
+  let totalExpenseValue = 0;
+
+  for (let index = 0; index < transactionsArray.length; index++) {
+    const element = transactionsArray[index];
+    if (element.type === "income") {
+      totalIncomeValue = totalIncomeValue + element.amount;
+    } else if (element.type === 'expense') {
+      totalExpenseValue = totalExpenseValue + element.amount;
+    }
+  }
+  totalIncome.textContent = `Total Income: €${totalIncomeValue}`;
+  totalExpenses.textContent = `Total Expenses: €${totalExpenseValue}`;
+  
+
+}
+
