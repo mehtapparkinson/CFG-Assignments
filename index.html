@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button id="partTwoButton">Click here for Homework Part II</button>
+      <h1>💸 Budget Buddy</h1>
+      <div class="intro-container">
+        <p class="intro-elements">
+          Welcome to our budgeting app! <br />
+          Track your expenses and income to manage your finances effectively.
+        </p>
+        <label for="name">What is your full name?</label>
+        <input type="text" id="user-name" placeholder="name, surname" />
+        <button id="start-button" onclick="startBudget()">Start</button>
+      </div>
+      <div class="app-container" style="display: none">
+        <div class="welcome-message"></div>
+        <div class="inputs-container">
+          <input
+            type="text"
+            name="description"
+            id="description"
+            placeholder="description"
+          />
+          <input type="number" name="amount" id="amount" placeholder="amount" />
+          <select id="type">
+            <option value="expense">Expense</option>
+            <option value="income">Income</option>
+          </select>
+          <h3>Operators</h3>
+          <div class="buttons">
+            <button id="add-button">Add</button>
+            <button id="undo-button" style="display: none">
+              Delete last from the end
+            </button>
+            <button id="unshift-button" style="display: none">
+              Add to the beginning
+            </button>
+            <button id="shift-button" style="display: none">
+              Delete from the beginning
+            </button>
+          </div>
+
+          <p id="message"></p>
+        </div>
+        <div class="summary">
+          <h2 class="summary-items total-budget">Your Budget</h2>
+          <p class="summary-items total-income">Total Income:</p>
+          <p class="summary-items total-expenses">Total Expenses:</p>
+        </div>
+        <div class="transactions"></div>
+      </div>
+      <div class="homework-part-two" style="display: none">
+        <h3>Unshift</h3>
+        <p>This method adds elements to the beginning of an array</p>
+        <code
+          >let arr = [2, 3, 4]; <br />
+          arr.unshift(1); // Adds 1 at the beginning</code
+        >
+        <hr />
+        <h3>Shift</h3>
+        <p>This method removes the first element from an array</p>
+        <code
+          >let arr = [1, 2, 3, 4]; let firstElement = arr.shift(); // Removes
+          the first element (1)</code
+        >
+        <hr />
+        <h3>Split</h3>
+        <p>
+          This method divides a string into an ordered list of substrings, puts
+          these substrings into an array. The division is done by searching for
+          a key that matches where the splits should occur
+        </p>
+        <code
+          >let str = "Hello World"; <br />
+          let words = str.split(" "); // Splits the string into an array of
+          words <br />
+          console.log(words); // Output: ["Hello", "World"]</code
+        >
+        <hr />
+        <h3>Example:</h3>
+        <code
+          >let CFGDegrees = ['Data Science', 'Software Engineering']; <br />
+          CFGDegrees.unshift('FullStack Engineering');<br />
+          console.log(CFGDegrees); // Output: ['FullStack Engineering', 'Data
+          Science', 'Software Engineering']
+        </code>
+        <hr />
+        <code
+          >let CFGDegrees = ['FullStack Engineering', 'Data Science', 'Software
+          Engineering']; <br />
+          CFGDegrees.shift(); console.log('CFGDegrees'); //Output: ['Data
+          Science', 'Software Engineering']
+        </code>
+        <hr />
+       <code> let CFGDegreesString = 'FullStack Engineering, Data Science, Software Engineering';<br>
+        let CFGDegreesArray = CFGDegreesString.split(', ') <br>
+        console.log(CFGDegreesArray); // Output: ['FullStack Engineering', 'Data Science', 'Software Engineering']<br />
+      </code>
+      <hr>
+        <h3>Object Methods</h3>
+        <p>A function inside an object is called an object method</p>
+        <code>
+          const myJavasciptObject = { <br>
+            name: 'Javascript', <br>
+            founder: 'Brendan Eich', <br>
+            year: '1995',<br>
+            describe: function () { <br>
+              const message ='JavaScript was created by Brendan Eich and first appeared in 1995.';<br>
+          return message;} <br>
+       } <br>
+          console.log(myJavasciptObject.describe()); //I can
+          access my custom object's describe method with dot notation.
+        </code>
+        <hr>
+        <h3>Onmouseover</h3>
+        <p>This event occurs when the mouse pointer enters an element.</p>
+        <code>element.addEventListener("mouseover", function); </code>
+        <hr />
+        <h3>Onclick</h3>
+        <p>This event occurs when the user clicks on an HTML element.</p>
+        <code>element.addEventListener("click", function); </code>
+        <hr />
+        <h3>Onkeypress</h3>
+        <p>This event occurs when the user presses a key on the keyboard.</p>
+        <code> element.addEventListener("keypress", function); </code>
+        <hr />
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

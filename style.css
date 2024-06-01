@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #d8e8ff;
+}
+
+h1 {
+    color: rgb(22, 42, 171);
+    font-weight: bolder;
+
+}
+
+p {
+    font-weight: 700;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 500px;
+    margin: auto;
+
+}
+
+#partTwoButton {
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(13, 54, 13);
+    background-color: rgb(148, 215, 100);
+    font-size: 15px;
+    font-weight: 800;
+    border: none;
+    margin: 10px;
+}
+
+#partTwoButton:hover {
+    background-color: rgb(155, 221, 199);
+}
+
+.app-container,
+.intro-container {
+
+    padding: 40px;
+    border-radius: 10px;
+    background-color: #ffffffba;
+    box-shadow: rgba(0, 0, 0, 0.332) 0px 5px 15px;
+
+}
+
+.intro-elements,
+.summary-items {
+    margin: 20px;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+input,
+select {
+    margin: 10px;
+    min-height: 25px;
+    border: 1px solid #6d0042;
+    border-radius: 5px;
+}
+
+input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: #d3f4f6;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+#add-button,
+#undo-button,
+#start-button,
+#shift-button,
+#unshift-button {
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(27, 27, 126);
+    background-color: rgb(122, 215, 215);
+    font-size: 15px;
+    font-weight: 800;
+    border: none;
+    margin: 10px;
+}
+
+#add-button:hover,
+#undo-button:hover,
+#start-button:hover,
+#shift-button:hover,
+#unshift-button:hover {
+    color: rgb(27, 27, 126);
+    background-color: rgb(108, 236, 125);
+}
+
+
+.transactions {
+    margin-top: 20px;
+    padding: 10px;
+    width: 300px;
+}
+
+.transaction {
+    display: flex;
+    flex-direction: row;
+    font-weight: 800;
+    justify-content: center;
+    align-items: center;
+}
+
+.homework-part-two {
+    display: flex;
+    text-align: left;
+    width: 150%;
+    padding: 50px;
+}
+
+code {
+    font-size: larger;
+    color: rgb(93, 93, 93);
+    line-height: 1.7;
+}
