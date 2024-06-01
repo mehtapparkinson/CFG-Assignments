@@ -98,7 +98,27 @@
           CFGDegrees.shift(); console.log('CFGDegrees'); //Output: ['Data
           Science', 'Software Engineering']
         </code>
-
+        <hr />
+       <code> let CFGDegreesString = 'FullStack Engineering, Data Science, Software Engineering';<br>
+        let CFGDegreesArray = CFGDegreesString.split(', ') <br>
+        console.log(CFGDegreesArray); // Output: ['FullStack Engineering', 'Data Science', 'Software Engineering']<br />
+      </code>
+      <hr>
+        <h3>Object Methods</h3>
+        <p>A function inside an object is called an object method</p>
+        <code>
+          const myJavasciptObject = { <br>
+            name: 'Javascript', <br>
+            founder: 'Brendan Eich', <br>
+            year: '1995',<br>
+            describe: function () { <br>
+              const message ='JavaScript was created by Brendan Eich and first appeared in 1995.';<br>
+          return message;} <br>
+       } <br>
+          console.log(myJavasciptObject.describe()); //I can
+          access my custom object's describe method with dot notation.
+        </code>
+        <hr>
         <h3>Onmouseover</h3>
         <p>This event occurs when the mouse pointer enters an element.</p>
         <code>element.addEventListener("mouseover", function); </code>
