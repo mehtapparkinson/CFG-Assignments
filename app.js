@@ -16,7 +16,9 @@ const userNameInput = document.getElementById("user-name");
 const totalBudgetArea = document.querySelector('.total-budget');
 
 function startBudget() {
-  const userName = userNameInput.value.trim();
+  const userNameandSurnameArray = userNameInput.value.split(' '); //Split used here
+  const userName = userNameandSurnameArray[0];
+  console.log(userName)
   if (userName) {
     appContainer.style.display = "block";
     introContainer.style.display = "none";
