@@ -6,6 +6,8 @@ const inputDescription = document.getElementById("description");
 const inputAmount = document.getElementById("amount");
 const inputType = document.getElementById("type");
 const addButton = document.getElementById("add-button");
+const shiftButton = document.getElementById('shift-button')
+const unshiftButton = document.getElementById('unshift-button');
 const message = document.getElementById("message");
 const totalIncome = document.querySelector(".total-income");
 const totalExpenses = document.querySelector(".total-expenses");
@@ -56,6 +58,9 @@ function addTransaction() {
     showTransactions();
     calculateBudget();
     undoButton.style.display = "block";
+    shiftButton.style.display = 'block';
+    unshiftButton.style.display = 'block';
+    addButton.textContent = 'Add to the end';
   } else {
     message.textContent = "";
     const failedMessage = "Please fill all fields!";
@@ -108,4 +113,42 @@ function undoTransaction() {
     console.log(`User removed a transaction`);
   }
   undoButton.style.display = transactionsArray.length > 0 ? "block" : "none";
+}
+
+
+shiftButton.addEventListener ('click', removeFromBeginning);
+function removeFromBeginning () {
+  if (transactionsArray.length > 0) {
+    transactionsArray.shift();
+    showTransactions();
+    calculateBudget();
+    console.log(`User removed a transaction`);
+  }
+  shiftButton.style.display = transactionsArray.length > 0 ? "block" : "none";
+}
+
+
+unshiftButton.addEventListener('click', addToBeginning)
+function addToBeginning () {
+  const description = inputDescription.value.trim();
+  const amount = parseInt(inputAmount.value);
+  const type = inputType.value;
+  if (description && amount && type) {
+    const transaction = {
+      description,
+      amount,
+      type,
+    };
+    transactionsArray.unshift(transaction);
+    console.log(`User added a transaction`);
+    showTransactions();
+    calculateBudget();
+  } else {
+    message.textContent = "";
+    const failedMessage = "Please fill all fields!";
+    alert("Please fill all fields!");
+    message.textContent = failedMessage;
+    message.style.color = "red";
+    message.style.fontWeight = "800";
+  }
 }

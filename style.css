@@ -64,23 +64,29 @@ input:focus {
 
 .buttons {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 #add-button,
 #undo-button,
-#start-button {
+#start-button,
+#shift-button,
+#unshift-button {
     padding: 10px;
     border-radius: 10px;
     color: rgb(27, 27, 126);
     background-color: rgb(122, 215, 215);
-    font-size: larger;
+    font-size: 15px;
     font-weight: 800;
     border: none;
     margin: 10px;
 }
 
-#add-button:hover {
+#add-button:hover,
+#undo-button:hover,
+#start-button:hover,
+#shift-button:hover,
+#unshift-button:hover {
     color: rgb(27, 27, 126);
     background-color: rgb(108, 236, 125);
 }
