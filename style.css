@@ -52,6 +52,14 @@ input,
 select {
     margin: 10px;
     min-height: 25px;
+    border: 1px solid #6d0042;
+    border-radius: 5px;
+}
+
+input:focus {
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-color: #d3f4f6;
 }
 
 .buttons {
