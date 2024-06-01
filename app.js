@@ -13,6 +13,7 @@ const transactionsContainer = document.querySelector(".transactions");
 const undoButton = document.getElementById("undo-button");
 const appContainer = document.querySelector(".app-container");
 const userNameInput = document.getElementById("user-name");
+const totalBudgetArea = document.querySelector('.total-budget');
 
 function startBudget() {
   const userName = userNameInput.value.trim();
@@ -49,7 +50,7 @@ function addTransaction() {
       type,
     };
     transactionsArray.push(transaction);
-    console.log(transactionsArray);
+    console.log(`User added a transaction`);
     showTransactions();
     calculateBudget();
     undoButton.style.display = "block";
@@ -78,6 +79,7 @@ function showTransactions() {
 function calculateBudget() {
   let totalIncomeValue = 0;
   let totalExpenseValue = 0;
+  let totalBudget = 0;
 
   for (let index = 0; index < transactionsArray.length; index++) {
     const element = transactionsArray[index];
@@ -89,14 +91,19 @@ function calculateBudget() {
   }
   totalIncome.textContent = `Total Income: €${totalIncomeValue}`;
   totalExpenses.textContent = `Total Expenses: €${totalExpenseValue}`;
+  totalBudgetArea.textContent =`Your Budget: ${totalIncomeValue-totalExpenseValue}`;
 }
 
+
+
 undoButton.addEventListener("click", undoTransaction);
+
 function undoTransaction() {
   if (transactionsArray.length > 0) {
     transactionsArray.pop();
     showTransactions();
     calculateBudget();
+    console.log(`User removed a transaction`);
   }
   undoButton.style.display = transactionsArray.length > 0 ? "block" : "none";
 }
